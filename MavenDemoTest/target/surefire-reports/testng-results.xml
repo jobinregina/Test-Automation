@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="API Suite" duration-ms="58025" started-at="2020-02-10T18:41:56 EST" finished-at="2020-02-10T18:42:54 EST">
+  <suite name="API Suite" duration-ms="219718" started-at="2020-02-10T23:11:14 EST" finished-at="2020-02-10T23:14:54 EST">
     <groups>
     </groups>
-    <test name="Test on Rest API " duration-ms="58025" started-at="2020-02-10T18:41:56 EST" finished-at="2020-02-10T18:42:54 EST">
-      <class name="Demo_Test.Sel_Test">
-        <test-method status="PASS" signature="JenkinTest()[pri:0, instance:Demo_Test.Sel_Test@6138e79a]" name="JenkinTest" duration-ms="57113" started-at="2020-02-10T18:41:56 EST" finished-at="2020-02-10T18:42:54 EST">
+    <test name="Test on Rest API " duration-ms="219718" started-at="2020-02-10T23:11:14 EST" finished-at="2020-02-10T23:14:54 EST">
+      <class name="W3school_Tests.FUN_tests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:W3school_Tests.FUN_tests@2f686d1f]" name="setup" is-config="true" duration-ms="70575" started-at="2020-02-10T23:11:14 EST" finished-at="2020-02-10T23:12:25 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- JenkinTest -->
-      </class> <!-- Demo_Test.Sel_Test -->
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="email_test()[pri:0, instance:W3school_Tests.FUN_tests@2f686d1f]" name="email_test" duration-ms="35589" started-at="2020-02-10T23:13:35 EST" finished-at="2020-02-10T23:14:11 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- email_test -->
+        <test-method status="PASS" signature="test_webpagelinks()[pri:0, instance:W3school_Tests.FUN_tests@2f686d1f]" name="test_webpagelinks" duration-ms="43487" started-at="2020-02-10T23:14:11 EST" finished-at="2020-02-10T23:14:54 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_webpagelinks -->
+      </class> <!-- W3school_Tests.FUN_tests -->
+      <class name="W3school_Tests.GUI_tests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:W3school_Tests.GUI_tests@4cf777e8]" name="setup" is-config="true" duration-ms="62576" started-at="2020-02-10T23:12:25 EST" finished-at="2020-02-10T23:13:27 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test_homepage_title()[pri:0, instance:W3school_Tests.GUI_tests@4cf777e8]" name="test_homepage_title" duration-ms="262" started-at="2020-02-10T23:13:28 EST" finished-at="2020-02-10T23:13:29 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_homepage_title -->
+        <test-method status="PASS" signature="test_searchoption()[pri:0, instance:W3school_Tests.GUI_tests@4cf777e8]" name="test_searchoption" duration-ms="6311" started-at="2020-02-10T23:13:29 EST" finished-at="2020-02-10T23:13:35 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_searchoption -->
+      </class> <!-- W3school_Tests.GUI_tests -->
     </test> <!-- Test on Rest API  -->
   </suite> <!-- API Suite -->
 </testng-results>

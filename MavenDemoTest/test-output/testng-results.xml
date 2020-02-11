@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="156" started-at="2020-02-10T16:31:27 EST" finished-at="2020-02-10T16:31:27 EST">
+  <suite name="Default suite" duration-ms="34261" started-at="2020-02-10T22:38:27 EST" finished-at="2020-02-10T22:39:02 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="156" started-at="2020-02-10T16:31:27 EST" finished-at="2020-02-10T16:31:27 EST">
-      <class name="com.qa.tests.DemoTest">
-        <test-method status="PASS" signature="addtest()[pri:0, instance:com.qa.tests.DemoTest@9660f4e]" name="addtest" duration-ms="36" started-at="2020-02-10T16:31:27 EST" finished-at="2020-02-10T16:31:27 EST">
+    <test name="Default test" duration-ms="34261" started-at="2020-02-10T22:38:27 EST" finished-at="2020-02-10T22:39:02 EST">
+      <class name="W3school_Tests.GUI_tests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:W3school_Tests.GUI_tests@cd2dae5]" name="setup" is-config="true" duration-ms="30697" started-at="2020-02-10T22:38:27 EST" finished-at="2020-02-10T22:38:58 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addtest -->
-        <test-method status="PASS" signature="multest()[pri:0, instance:com.qa.tests.DemoTest@9660f4e]" name="multest" duration-ms="3" started-at="2020-02-10T16:31:27 EST" finished-at="2020-02-10T16:31:27 EST">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="test_homepage_title()[pri:0, instance:W3school_Tests.GUI_tests@cd2dae5]" name="test_homepage_title" duration-ms="44" started-at="2020-02-10T22:38:58 EST" finished-at="2020-02-10T22:38:58 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- multest -->
-        <test-method status="PASS" signature="subtest()[pri:0, instance:com.qa.tests.DemoTest@9660f4e]" name="subtest" duration-ms="3" started-at="2020-02-10T16:31:27 EST" finished-at="2020-02-10T16:31:27 EST">
+        </test-method> <!-- test_homepage_title -->
+        <test-method status="PASS" signature="test_searchoption()[pri:0, instance:W3school_Tests.GUI_tests@cd2dae5]" name="test_searchoption" duration-ms="3349" started-at="2020-02-10T22:38:58 EST" finished-at="2020-02-10T22:39:02 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- subtest -->
-      </class> <!-- com.qa.tests.DemoTest -->
+        </test-method> <!-- test_searchoption -->
+      </class> <!-- W3school_Tests.GUI_tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

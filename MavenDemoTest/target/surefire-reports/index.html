@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-API_Suite">
-                    <span>C:\Users\Jobin\git\gitrepo\MavenDemoTest\testng.xml</span>
+                    <span>C:\Users\Jobin\git\Test-Automation\MavenDemoTest\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,7 +102,22 @@
                     <div class="method-list-content passed suite-API_Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-API_Suite" title="Demo_Test.Sel_Test" hash-for-method="JenkinTest">JenkinTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-API_Suite" title="W3school_Tests.FUN_tests" hash-for-method="email_test">email_test</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-API_Suite" title="W3school_Tests.GUI_tests" hash-for-method="test_homepage_title">test_homepage_title</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-API_Suite" title="W3school_Tests.GUI_tests" hash-for-method="test_searchoption">test_searchoption</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-API_Suite" title="W3school_Tests.FUN_tests" hash-for-method="test_webpagelinks">test_webpagelinks</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-API_Suite -->
@@ -120,14 +135,43 @@
           <div class="suite-API_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">Demo_Test.Sel_Test</span>
+              <span class="class-name">W3school_Tests.GUI_tests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="JenkinTest">
-                  </a> <!-- JenkinTest -->
-                  <span class="method-name">JenkinTest</span>
+                  <a name="test_homepage_title">
+                  </a> <!-- test_homepage_title -->
+                  <span class="method-name">test_homepage_title</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_searchoption">
+                  </a> <!-- test_searchoption -->
+                  <span class="method-name">test_searchoption</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-API_Suite-class-passed -->
+          <div class="suite-API_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">W3school_Tests.FUN_tests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="email_test">
+                  </a> <!-- email_test -->
+                  <span class="method-name">email_test</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_webpagelinks">
+                  </a> <!-- test_webpagelinks -->
+                  <span class="method-name">test_webpagelinks</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -135,7 +179,7 @@
         </div> <!-- panel API_Suite -->
         <div panel-name="test-xml-API_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Jobin\git\gitrepo\MavenDemoTest\testng.xml</span>
+            <span class="header-content">C:\Users\Jobin\git\Test-Automation\MavenDemoTest\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,7 +188,8 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot; name=&quot;API Suite&quot; parallel=&quot;tests&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;Test on Rest API &quot; parallel=&quot;tests&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;Demo_Test.Sel_Test&quot;/&gt;
+      &lt;class name=&quot;W3school_Tests.GUI_tests&quot;/&gt;
+      &lt;class name=&quot;W3school_Tests.FUN_tests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test on Rest API  --&gt;
 &lt;/suite&gt; &lt;!-- API Suite --&gt;
@@ -158,7 +203,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test on Rest API  (1 class)</span>
+                <span class="test-name">Test on Rest API  (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -184,16 +229,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'JenkinTest')
-data.setCell(0, 2, 'Demo_Test.Sel_Test')
-data.setCell(0, 3, 57113);
+data.setCell(0, 1, 'test_webpagelinks')
+data.setCell(0, 2, 'W3school_Tests.FUN_tests')
+data.setCell(0, 3, 43487);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'email_test')
+data.setCell(1, 2, 'W3school_Tests.FUN_tests')
+data.setCell(1, 3, 35589);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test_searchoption')
+data.setCell(2, 2, 'W3school_Tests.GUI_tests')
+data.setCell(2, 3, 6311);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test_homepage_title')
+data.setCell(3, 2, 'W3school_Tests.GUI_tests')
+data.setCell(3, 3, 262);
 window.suiteTableData['API_Suite']= { tableData: data, tableDiv: 'times-div-API_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 58 seconds</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-API_Suite">
               </div> <!-- times-div-API_Suite -->
             </div> <!-- times-div -->
@@ -219,10 +276,36 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">Demo_Test.Sel_Test</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">JenkinTest</span>
+              <div class="chronological-class-name">W3school_Tests.FUN_tests</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">W3school_Tests.GUI_tests</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setup</span>
+                <span class="method-start">70575 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">test_homepage_title</span>
+                <span class="method-start">134051 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_searchoption</span>
+                <span class="method-start">134318 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">W3school_Tests.FUN_tests</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">email_test</span>
+                <span class="method-start">140631 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_webpagelinks</span>
+                <span class="method-start">176221 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
