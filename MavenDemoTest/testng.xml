@@ -3,8 +3,7 @@
 <suite name="API Suite" parallel="tests">
 	<test name="Test on Rest API ">
 		<classes>
-			<class name="W3school_Tests.GUI_tests" />
-			<class name="W3school_Tests.FUN_tests"/>
+			<class name="EBApparel_Tests.Functional_tests" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
