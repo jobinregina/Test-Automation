@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="API Suite" duration-ms="58025" started-at="2020-02-10T18:41:56 EST" finished-at="2020-02-10T18:42:54 EST">
+    <groups>
+    </groups>
+    <test name="Test on Rest API " duration-ms="58025" started-at="2020-02-10T18:41:56 EST" finished-at="2020-02-10T18:42:54 EST">
+      <class name="Demo_Test.Sel_Test">
+        <test-method status="PASS" signature="JenkinTest()[pri:0, instance:Demo_Test.Sel_Test@6138e79a]" name="JenkinTest" duration-ms="57113" started-at="2020-02-10T18:41:56 EST" finished-at="2020-02-10T18:42:54 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- JenkinTest -->
+      </class> <!-- Demo_Test.Sel_Test -->
+    </test> <!-- Test on Rest API  -->
+  </suite> <!-- API Suite -->
+</testng-results>
