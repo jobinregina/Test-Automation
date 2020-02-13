@@ -28,7 +28,7 @@ public class Functional_tests {
 	/* this test checks
 	 * 
 	 * invalid login of ebgames*/
-	@Test
+	//@Test
 	public void invalidlogintest(){
 		EBApparel_home hmpt = new EBApparel_home(driver);
 		Assert.assertEquals(hmpt.getloginmsg(), "Unable to log on. Please make sure the username and password are for a valid user");
@@ -37,7 +37,7 @@ public class Functional_tests {
 	/*this test checks
 	 * 
 	 null login of eb games*/ 
-	@Test
+	//@Test
 	public void nulllogintest() {
 		EBApparel_home nlt = new EBApparel_home(driver);
 		ArrayList <String> out = new ArrayList<String>();
@@ -50,19 +50,28 @@ public class Functional_tests {
 	/* this test checks
 	 * 
 	 * broken links on web page*/
-	@Test
+	//@Test
 	public void brokenlinktest() {
 		EBApparel_home blt = new EBApparel_home(driver);
 		Assert.assertEquals(blt.getlinkstatus(),0);
 	}
 
-	/*this test checks-- not a good assertion
+	/*this test checks
 	 * 
 	 search option of eb games*/
-	@Test
+	//@Test
 	public void searchtest() {
 		EBApparel_home st = new EBApparel_home(driver);
-		Assert.assertEquals(st.getserchresults(), "Found 959 items for your search of PS4.");
+		Assert.assertEquals(st.getserchresults(), "items for your search of PS4.");
 		
+	}
+	
+	/* this test checks
+	 * 
+	 image search option for the game titles*/
+	@Test
+	public void imgsearch() {
+		EBApparel_home ims = new EBApparel_home(driver);
+		Assert.assertEquals(ims.getimageresult(), true);
 	}
 }

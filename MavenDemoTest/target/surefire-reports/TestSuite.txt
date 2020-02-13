@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 81.36 s <<< FAILURE! - in TestSuite
-searchtest(EBApparel_Tests.Functional_tests)  Time elapsed: 3.838 s  <<< FAILURE!
-java.lang.AssertionError: expected [Found 954 items for your search of PS4.] but found [Found 959 items for your search of PS4.]
-	at EBApparel_Tests.Functional_tests.searchtest(Functional_tests.java:65)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 80.008 s - in TestSuite

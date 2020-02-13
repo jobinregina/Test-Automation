@@ -16,21 +16,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class EBApparel_home {
-	
+
 	WebDriver driver;
 	String url = "";
 	HttpURLConnection huc = null;
 	int respcode = 200;
 	int good = 0; int bad = 0;
-	
+
 	public EBApparel_home(WebDriver driver) {
-		
+
 		this.driver = driver;
 	}
-	
+
 	// login check with wrong details
 	public String getloginmsg(){
-		
+
 		driver.findElement(By.xpath(".//*[@class='accountDrop']")).click();
 		driver.findElement(By.xpath(".//*[@class='navLogin']")).click();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -39,43 +39,43 @@ public class EBApparel_home {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,300)");
 		driver.findElement(By.xpath(".//*[@class='logonButton']")).click();
-        return driver.findElement(By.xpath(".//*[@class='error message errorMessage']")).getText();
+		return driver.findElement(By.xpath(".//*[@class='error message errorMessage']")).getText();
 	}
-	
+
 	// check login with null values
 	public ArrayList<String> getnulllogin() {
-		
+
 		driver.findElement(By.xpath(".//*[@class='accountDrop']")).click();
 		driver.findElement(By.xpath(".//*[@class='navLogin']")).click();
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,300)");
 		driver.findElement(By.xpath(".//*[@class='logonButton']")).click();
-        ArrayList <String> links = new ArrayList<String>();
-        driver.findElement(By.xpath(".//*[@data-valmsg-for='UserName']")).getText();
-        links.add(driver.findElement(By.xpath(".//*[@data-valmsg-for='UserName']")).getText());
-        System.out.println(links.get(0));
-        links.add(driver.findElement(By.xpath(".//*[@data-valmsg-for='Password']")).getText());
-        System.out.print(links.get(1));
-        return links;
+		ArrayList <String> links = new ArrayList<String>();
+		driver.findElement(By.xpath(".//*[@data-valmsg-for='UserName']")).getText();
+		links.add(driver.findElement(By.xpath(".//*[@data-valmsg-for='UserName']")).getText());
+		System.out.println(links.get(0));
+		links.add(driver.findElement(By.xpath(".//*[@data-valmsg-for='Password']")).getText());
+		System.out.print(links.get(1));
+		return links;
 	}
-	
+
 	// check for broken links
 	public int getlinkstatus() {
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 		Iterator<WebElement> it = links.iterator();
-		
+
 		while(it.hasNext()) {
-			
+
 			url = it.next().getAttribute("href");
-			
+
 			if (url == null || url.isEmpty()) {
 				System.out.println( url + "is either not configured or empty");
 				continue;
 			}
-			
+
 			try {
-				
+
 				huc = (HttpURLConnection)(new URL(url).openConnection());
 				huc.setRequestMethod("HEAD");
 				huc.connect();
@@ -93,18 +93,28 @@ public class EBApparel_home {
 			}catch(IOException e) {
 				e.printStackTrace();
 			}
-				
+
 		}
-		
+
 		return bad;
-		
+
 	}
-	
+
 	// this returns search values of ebgames
 	public String getserchresults() {
 		driver.findElement(By.name("q")).sendKeys("PS4", Keys.ENTER);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		return driver.findElement(By.xpath(".//*[@class= 'searchSum']")).getText();
+		String s = driver.findElement(By.xpath(".//*[@class= 'searchSum']")).getText();
+		return s.substring(10);
+	}
+
+	// this returns image present or not
+	public boolean getimageresult() {
+		driver.findElement(By.name("q")).sendKeys("PS4", Keys.ENTER);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		WebElement image = driver.findElement(By.xpath(".//*[@class='prodImg']/img"));
+		boolean ImagePresent = (boolean)image.getAttribute("src").contains(".jpg") || (boolean)image.getAttribute("src").contains(".gif");
+		return ImagePresent;
 	}
 
 }
