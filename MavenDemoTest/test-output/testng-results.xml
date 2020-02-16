@@ -2,19 +2,19 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17700" started-at="2020-02-13T18:00:28 EST" finished-at="2020-02-13T18:00:45 EST">
+  <suite name="Default suite" duration-ms="31486" started-at="2020-02-15T21:27:42 EST" finished-at="2020-02-15T21:28:13 EST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17700" started-at="2020-02-13T18:00:28 EST" finished-at="2020-02-13T18:00:45 EST">
+    <test name="Default test" duration-ms="31486" started-at="2020-02-15T21:27:42 EST" finished-at="2020-02-15T21:28:13 EST">
       <class name="EBApparel_Tests.Functional_tests">
-        <test-method status="PASS" signature="setup()[pri:0, instance:EBApparel_Tests.Functional_tests@49fc609f]" name="setup" is-config="true" duration-ms="15765" started-at="2020-02-13T18:00:28 EST" finished-at="2020-02-13T18:00:43 EST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:EBApparel_Tests.Functional_tests@49fc609f]" name="setup" is-config="true" duration-ms="22601" started-at="2020-02-15T21:27:42 EST" finished-at="2020-02-15T21:28:04 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="imgsearch()[pri:0, instance:EBApparel_Tests.Functional_tests@49fc609f]" name="imgsearch" duration-ms="1858" started-at="2020-02-13T18:00:43 EST" finished-at="2020-02-13T18:00:45 EST">
+        <test-method status="PASS" signature="brokenimagetest()[pri:0, instance:EBApparel_Tests.Functional_tests@49fc609f]" name="brokenimagetest" duration-ms="8432" started-at="2020-02-15T21:28:05 EST" finished-at="2020-02-15T21:28:13 EST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- imgsearch -->
+        </test-method> <!-- brokenimagetest -->
       </class> <!-- EBApparel_Tests.Functional_tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -68,10 +68,10 @@ public class Functional_tests {
 	
 	/* this test checks
 	 * 
-	 image search option for the game titles*/
+	 * broken images on web page*/
 	@Test
-	public void imgsearch() {
-		EBApparel_home ims = new EBApparel_home(driver);
-		Assert.assertEquals(ims.getimageresult(), true);
+	public void brokenimagetest() {
+		EBApparel_home bimg = new EBApparel_home(driver);
+		Assert.assertEquals(bimg.getimageresult(),0);
 	}
 }

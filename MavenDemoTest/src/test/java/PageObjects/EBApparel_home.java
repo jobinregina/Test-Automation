@@ -18,10 +18,7 @@ import org.openqa.selenium.WebElement;
 public class EBApparel_home {
 
 	WebDriver driver;
-	String url = "";
-	HttpURLConnection huc = null;
-	int respcode = 200;
-	int good = 0; int bad = 0;
+
 
 	public EBApparel_home(WebDriver driver) {
 
@@ -62,6 +59,10 @@ public class EBApparel_home {
 
 	// check for broken links
 	public int getlinkstatus() {
+		String url = "";
+		HttpURLConnection huc = null;
+		int respcode = 200;
+		int good = 0; int bad = 0;
 		List<WebElement> links = driver.findElements(By.tagName("a"));
 		Iterator<WebElement> it = links.iterator();
 
@@ -108,13 +109,49 @@ public class EBApparel_home {
 		return s.substring(10);
 	}
 
-	// this returns image present or not
-	public boolean getimageresult() {
-		driver.findElement(By.name("q")).sendKeys("PS4", Keys.ENTER);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		WebElement image = driver.findElement(By.xpath(".//*[@class='prodImg']/img"));
-		boolean ImagePresent = (boolean)image.getAttribute("src").contains(".jpg") || (boolean)image.getAttribute("src").contains(".gif");
-		return ImagePresent;
-	}
+	// return broken image files
+	public int getimageresult() {
+		String pic = "";
+		HttpURLConnection huc = null;
+		int respcode = 200;
+		int good = 0; int bad = 0;
+			List<WebElement> img = driver.findElements(By.tagName("img"));
+			Iterator<WebElement> it = img.iterator();
 
+			while(it.hasNext()) {
+
+				pic = it.next().getAttribute("src");
+
+				if (pic == null || pic.isEmpty()) {
+					System.out.println( pic + "is either not configured or empty");
+					continue;
+				}
+
+				try {
+
+					huc = (HttpURLConnection)(new URL(pic).openConnection());
+					huc.setRequestMethod("HEAD");
+					huc.connect();
+					respcode = huc.getResponseCode();
+					if(respcode >= 400)
+					{
+						bad+= 1;
+						System.out.println(pic);
+					}
+					else {
+						good+= 1;
+					}
+				}catch(MalformedURLException e) {
+					e.printStackTrace();
+				}catch(IOException e) {
+					e.printStackTrace();
+				}
+
+			}
+			return bad;
+	}
+	
+	
+	
+	
 }
