@@ -69,9 +69,19 @@ public class Functional_tests {
 	/* this test checks
 	 * 
 	 * broken images on web page*/
-	@Test
+	//@Test
 	public void brokenimagetest() {
 		EBApparel_home bimg = new EBApparel_home(driver);
 		Assert.assertEquals(bimg.getimageresult(),0);
 	}
+	
+	/* this test check
+	 * 
+	 * gift card invalid scenario*/
+	 @Test
+	 public void giftcardinvalidtest() {
+		 EBApparel_home gfi = new EBApparel_home(driver);
+		 Assert.assertEquals(gfi.invalidgiftcard(), "Giftcard number/pin not valid or card has no funds.\r\n" + 
+		 		"Ok");
+	 }
 }
