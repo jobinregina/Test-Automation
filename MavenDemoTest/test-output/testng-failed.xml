@@ -5,7 +5,7 @@
     <classes>
       <class name="EBApparel_Tests.Functional_tests">
         <methods>
-          <include name="giftcardinvalidtest"/>
+          <include name="carttest"/>
           <include name="setup"/>
         </methods>
       </class> <!-- EBApparel_Tests.Functional_tests -->

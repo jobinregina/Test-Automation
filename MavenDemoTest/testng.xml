@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="API Suite" parallel="tests">
-	<test name="Test on Rest API ">
+<suite name="Test Suite" parallel="tests">
+	<listeners>
+		<listener class-name="listeners.TestNGlisteners" />
+	</listeners>
+	<test name="Test on UI ">
 		<classes>
-			<class name="EBApparel_Tests.Functional_tests" />
+			<class name="com.ebgames.saf.tests.SearchboxTestCase" />
 		</classes>
 	</test> <!-- Test -->
+
 </suite> <!-- Suite -->

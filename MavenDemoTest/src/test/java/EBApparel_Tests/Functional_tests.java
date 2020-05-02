@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -28,7 +29,7 @@ public class Functional_tests {
 	/* this test checks
 	 * 
 	 * invalid login of ebgames*/
-	//@Test
+	@Test
 	public void invalidlogintest(){
 		EBApparel_home hmpt = new EBApparel_home(driver);
 		Assert.assertEquals(hmpt.getloginmsg(), "Unable to log on. Please make sure the username and password are for a valid user");
@@ -78,10 +79,24 @@ public class Functional_tests {
 	/* this test check
 	 * 
 	 * gift card invalid scenario*/
-	 @Test
+	 //@Test
 	 public void giftcardinvalidtest() {
 		 EBApparel_home gfi = new EBApparel_home(driver);
-		 Assert.assertEquals(gfi.invalidgiftcard(), "Giftcard number/pin not valid or card has no funds.\r\n" + 
-		 		"Ok");
+		 Assert.assertEquals(gfi.invalidgiftcard(), "Giftcard number/pin not valid or card has no funds.");
 	 }
+	 
+	 /* this test check
+	  * 
+	  * cart add and remove functionality*/
+	 //@Test
+	 public void carttest() throws InterruptedException {
+		 EBApparel_home crt = new EBApparel_home(driver);
+		 Assert.assertEquals(crt.getCart(), "EB Games | The largest video game retailer in Canada. Play. Trade. Save. - EBGames.ca");
+	 }
+	 
+	 @AfterSuite
+	 public void tearDown() {
+	     driver.close();
+	  }
+	  
 }

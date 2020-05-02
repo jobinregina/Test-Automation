@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -164,7 +165,7 @@ public class EBApparel_home {
 		Actions action = new Actions(driver);
 		WebElement cart = driver.findElement(By.xpath(".//*[@id='btnAddToCart']"));
 		action.moveToElement(cart).click().perform();
-		
+
 		/*List<WebElement> list1 = driver.findElements(By.xpath(".//*[@class='customRadio']"));
 
 		for(WebElement e: list1) {
@@ -206,7 +207,7 @@ public class EBApparel_home {
 		//clickable
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//button[contains(.,\"Continue as Guest\")]")));
 		action.moveToElement(guest).click().perform();
-		
+
 		/*List<WebElement> list2 = driver.findElements(By.xpath(".//*[@id='deliveryRadioOptions_6']"));
 		for(WebElement e: list2) {
 			System.out.println(e.getAttribute("value"));
@@ -223,7 +224,7 @@ public class EBApparel_home {
 		driver.findElement(By.name("address1")).sendKeys("dddddddd");
 		driver.findElement(By.xpath(".//*[@id='addressZip']")).sendKeys("L6S 2B7");
 		driver.findElement(By.name("city")).sendKeys("brampton");
-		
+
 		List<WebElement> province = driver.findElements(By.tagName("option"));  //---------------------------------select from dropdown
 		String addprov;
 		for(int i = 0; i<province.size(); i++) {
@@ -250,15 +251,119 @@ public class EBApparel_home {
 		//clickable
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//button[contains(.,\"Next: Shipping Options\")]")));
 		action.moveToElement(ship).click().perform();
-	    driver.findElement(By.xpath(".//button[contains(.,\"Save Anyway\")]")).click();
-	    driver.findElement(By.xpath(".//button[contains(.,\"Next: Payment Options\")]")).click();
+		driver.findElement(By.xpath(".//button[contains(.,\"Save Anyway\")]")).click();
+		driver.findElement(By.xpath(".//button[contains(.,\"Next: Payment Options\")]")).click();
 		driver.findElement(By.xpath(".//*[@id='gcn']")).sendKeys("12345", Keys.ENTER);
 		driver.findElement(By.xpath(".//*[@id='gcp']")).sendKeys("12345", Keys.ENTER);
-		String txt = driver.findElement(By.xpath(".//*[@id='cdk-overlay-0']")).getText();
+
+
+		String txt = driver.findElement(By.xpath(".//span[contains(@class,'ng-tns-c23-4') and contains(text(),'Giftcard number/pin not valid or card has no funds.')]")).getText();
 		driver.findElement(By.xpath(".//button[contains(.,\"Ok\")]")).click();
-        System.out.println(txt);
+		System.out.println(txt);
 		return txt;
 	}
+
+	// this method checks cart functionality and returns the page title
+	public String getCart() throws InterruptedException {
+
+		WebDriverWait wait = new WebDriverWait(driver,20);
+		JavascriptExecutor js =(JavascriptExecutor)driver;
+		Actions action = new Actions(driver);
+		
+		
+        //ADD TITLES TO THE CART
+		for(int i =0; i<3; i++ ) {
+
+			//presence in DOM
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class='PlayStation 4']")));
+			//scrolling
+			WebElement game = driver.findElement(By.xpath(".//*[@class='PlayStation 4']"));
+			//clickable
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@class='PlayStation 4']")));
+			action.moveToElement(game).click().perform();
+	
+			WebElement element = driver.findElement(By.xpath(".//a[@href='/PS4/Games/762568/dragon-ball-z-kakarot']"));
+			element.click();
+			try {
+				//presence in DOM
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='btnAddToCart']")));
+				//scrolling
+				WebElement cart = driver.findElement(By.xpath(".//*[@id='btnAddToCart']"));
+				//clickable
+				wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@id='btnAddToCart']")));
+				action.moveToElement(cart).click().perform();
+			}
+			catch (NoSuchElementException e){
+				Thread.sleep(3000);
+				driver.navigate().refresh();
+				WebElement cart = driver.findElement(By.xpath(".//*[@id='btnAddToCart']"));
+				action.moveToElement(cart).click().perform();
+			}
+
+			/*List<WebElement> list1 = driver.findElements(By.xpath(".//*[@class='customRadio']"));
+
+		for(WebElement e: list1) {
+			System.out.println(e.getAttribute("value"));
+			System.out.println(e.isSelected());
+
+			if(e.getAttribute("value").equals("83000")) {
+				e.click();// ----------------------------------------------------------------------------------radio button
+			}
+		}*/
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			//presence in DOM
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//button[contains(.,\"Go To cart\")]")));
+			//scrolling
+			WebElement pop = driver.findElement(By.xpath(".//button[contains(.,\"Go To cart\")]"));
+			js.executeScript("arguments[0].scrollIntoView(true);", pop);
+			//clickable
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//button[contains(.,\"Go To cart\")]")));
+			action.moveToElement(pop).click().perform();
+
+			//presence in DOM
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//button[contains(.,\"Continue Shopping\")]")));
+			//scrolling
+			WebElement shop = driver.findElement(By.xpath(".//button[contains(.,\"Continue Shopping\")]"));
+			//js.executeScript("arguments[0].scrollIntoView(true);", shop);
+			//clickable
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//button[contains(.,\"Continue Shopping\")]")));
+			action.moveToElement(shop).click().perform();
+			System.out.println("loop");
+
+		}
+		
+		System .out.println("shopping done");
+
+		driver.findElement(By.xpath(".//*[@class = 'cartRemind']")).click();
+		
+        //CLICK ADD/SUBTRACT BUTTON
+		//multiple elements
+		List <WebElement> count = driver.findElements(By.xpath(".//*[@class='gs_rocker']"));
+
+		for(int i=0;i<count.size();i++) {
+			//System.out.println(list.get(i).getText());
+			if(count.get(i).getText().equals("+")) {
+				count.get(i).click();
+				break;
+			}
+		}
+
+		//REMOVE CART ITEMS
+		//presence in DOM
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@class = 'removeLnk']")));
+		//scrolling
+		WebElement remove = driver.findElement(By.xpath(".//*[@class = 'removeLnk']"));
+		//js.executeScript("arguments[0].scrollIntoView(true);", shop);
+		//clickable
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(".//*[@class = 'removeLnk']")));
+		action.moveToElement(remove).click().perform();
+
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+		return driver.getTitle();
+
+	}
+
 
 
 

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="API Suite" duration-ms="30251" started-at="2020-02-13T18:07:32 EST" finished-at="2020-02-13T18:08:03 EST">
+  <suite name="API Suite" duration-ms="46021" started-at="2020-03-02T17:47:25 EST" finished-at="2020-03-02T17:48:11 EST">
     <groups>
     </groups>
-    <test name="Test on Rest API " duration-ms="30251" started-at="2020-02-13T18:07:32 EST" finished-at="2020-02-13T18:08:03 EST">
+    <test name="Test on Rest API " duration-ms="46021" started-at="2020-03-02T17:47:25 EST" finished-at="2020-03-02T17:48:11 EST">
       <class name="EBApparel_Tests.Functional_tests">
-        <test-method status="PASS" signature="setup()[pri:0, instance:EBApparel_Tests.Functional_tests@589838eb]" name="setup" is-config="true" duration-ms="27100" started-at="2020-02-13T18:07:32 EST" finished-at="2020-02-13T18:07:59 EST">
+        <test-method status="PASS" signature="setup()[pri:0, instance:EBApparel_Tests.Functional_tests@396f6598]" name="setup" is-config="true" duration-ms="32018" started-at="2020-03-02T17:47:25 EST" finished-at="2020-03-02T17:47:57 EST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="imgsearch()[pri:0, instance:EBApparel_Tests.Functional_tests@589838eb]" name="imgsearch" duration-ms="2369" started-at="2020-02-13T18:07:59 EST" finished-at="2020-02-13T18:08:02 EST">
+        <test-method status="FAIL" signature="invalidlogintest()[pri:0, instance:EBApparel_Tests.Functional_tests@396f6598]" name="invalidlogintest" duration-ms="10673" started-at="2020-03-02T17:47:57 EST" finished-at="2020-03-02T17:48:08 EST">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [true] but found [false]]]>
+              <![CDATA[expected [Unable to log on. Please make sure the username and password are for a valid user] but found []]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+              <![CDATA[java.lang.AssertionError: expected [Unable to log on. Please make sure the username and password are for a valid user] but found []
 at org.testng.Assert.fail(Assert.java:97)
 at org.testng.Assert.assertEqualsImpl(Assert.java:136)
 at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:751)
-at org.testng.Assert.assertEquals(Assert.java:761)
-at EBApparel_Tests.Functional_tests.imgsearch(Functional_tests.java:75)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at EBApparel_Tests.Functional_tests.invalidlogintest(Functional_tests.java:34)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -36,7 +36,7 @@ at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at org.testng.TestRunner$$Lambda$284/1874321870.accept(Unknown Source)
+at org.testng.TestRunner$$Lambda$283/1805544313.accept(Unknown Source)
 at java.util.ArrayList.forEach(ArrayList.java:1234)
 at org.testng.TestRunner.privateRun(TestRunner.java:770)
 at org.testng.TestRunner.run(TestRunner.java:591)
@@ -44,7 +44,7 @@ at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
 at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
 at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
 at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
-at org.testng.internal.thread.ThreadUtil$$Lambda$37/101478235.call(Unknown Source)
+at org.testng.internal.thread.ThreadUtil$$Lambda$37/1263877414.call(Unknown Source)
 at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
@@ -54,7 +54,11 @@ at java.lang.Thread.run(Thread.java:745)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- imgsearch -->
+        </test-method> <!-- invalidlogintest -->
+        <test-method status="PASS" signature="nulllogintest()[pri:0, instance:EBApparel_Tests.Functional_tests@396f6598]" name="nulllogintest" duration-ms="2952" started-at="2020-03-02T17:48:08 EST" finished-at="2020-03-02T17:48:11 EST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nulllogintest -->
       </class> <!-- EBApparel_Tests.Functional_tests -->
     </test> <!-- Test on Rest API  -->
   </suite> <!-- API Suite -->
